@@ -12,7 +12,7 @@ define config.developer = True
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("chadisland")
+define config.name = _("Chad Island")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -33,19 +33,19 @@ define gui.about = _p("""Made with love by Gelato Labs for Ludum Dare 43 {i}("Sa
 
 The Gelato Labs team for LD43 is:
 
-{i}{b}Kyle Farwell (kfarwell)
+{i}{b}Kyle Farwell (kfarwell){/b} -- Programmer, Writer
 
-Matthew Petry (fireTwoOneNine)
+{b}Matthew Petry (fireTwoOneNine){/b} -- Programmer, UI Artist
 
-Phil St. Antoine (squid)
+{b}Phil St. Antoine (squid){/b} -- Designer, Writer
 
-NickAtlas
+{b}NickAtlas (RealitySimulator){/b} -- Character/UI Artist
 
-DICEBLOCK
+{b}DICEBLOCK{/b} -- Musician
 
-Sandy Freeland
+{b}Sandy Freeland (Pegasauce){/b} -- Resident Chad Expert
 
-Matthew Rose (mtrose42){/b}{/i}
+{b}Matthew Rose (mtrose42){/b}{/i} -- Designer, Writer
 """)
 
 

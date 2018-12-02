@@ -52,7 +52,23 @@ label start:
     show mc center normal
     show shaman normal right
     shaman "By the power vested in me by His Holy Chadness, Chad the Sun God, I bestow upon you the title of Master Chad, and pronounce you the new Chieftain of Chad Island!"
-    
+    mc "Hell yeah, I'm gonna make this island great again!"
+    shaman "Your new duties as Chieftain are as follows:" 
+    shaman "1. Protect the island from any bogus bros or babes."
+    shaman "2. Pray to his holy Chadness, Chad the Sun God." 
+    shaman "And 3. Do whatever it takes to keep his holy Chadness happy, even if it means sacrificing somebody into the volcano." 
+    shaman "Good luck new Chieftain, may your rein be long and hard."
+    hide shaman
+    mc "Alright! And as my first act as a chieftain, I summon the bodacious babe, Stacy."
+    show stacy normal at right
+    stacy "Uh, hi [pname]. Congrats, I guess..."
+    mc "So, Stacy, now that I'm Chieftain, how about you and I get to know each other a little better."
+    mc "If you know what I'm saying ;)"   
+    hide stacy
+    show stacy annoyed at right
+    stacy "Uh, thanks, but no. I've already got my eyes on another hunk, and he's way more Chad than you'll ever be. BYE!"
+    hide stacy
+    mc "Aw man, that is totally bogus. Even when I'm Chieftain Stacy still turns me down."
 
 label map:
     call screen map
