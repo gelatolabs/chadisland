@@ -23,6 +23,8 @@ screen map:
         hotspot (1266, 526, 300, 455) clicked Jump("volcano")
 
 label start:
+    play music "sound/main.mp3"
+
     python:
         pname = renpy.input("Who are you?", "Anonymous Coward").strip()
 
