@@ -1,0 +1,30 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "renpy/common/00start.rpy", line 224, in script call
+    call _splashscreen from _call_splashscreen_1
+  File "game/screens.rpy", line 8, in script
+    $ renpy.music.play(crawdaddy)
+  File "game/screens.rpy", line 8, in <module>
+    $ renpy.music.play(crawdaddy)
+NameError: name 'crawdaddy' is not defined
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "renpy/common/00start.rpy", line 224, in script call
+    call _splashscreen from _call_splashscreen_1
+  File "game/screens.rpy", line 8, in script
+    $ renpy.music.play(crawdaddy)
+  File "C:\Users\User\Documents\chadisland development\renpy-7.1.3-sdk\renpy\ast.py", line 881, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\User\Documents\chadisland development\renpy-7.1.3-sdk\renpy\python.py", line 1913, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/screens.rpy", line 8, in <module>
+    $ renpy.music.play(crawdaddy)
+NameError: name 'crawdaddy' is not defined
+
+Windows-8-6.2.9200
+Ren'Py 7.1.3.1092
+chadisland 1.0
+Sat Dec 01 19:24:18 2018
