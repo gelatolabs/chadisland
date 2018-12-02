@@ -55,25 +55,25 @@ define gui.interface_text_color = '#404040'
 ## Fonts and Font Sizes ########################################################
 
 ## The font used for in-game text.
-define gui.text_font = "gui/Amazing_Bro.ttf"
+define gui.text_font = "gui/madscrwl.ttf"
 
 ## The font used for character names.
-define gui.name_text_font = "gui/Amazing_Bro.ttf"
+define gui.name_text_font = "gui/madscrwl.ttf"
 
 ## The font used for out-of-game text.
-define gui.interface_text_font = "gui/Amazing_Bro.ttf"
+define gui.interface_text_font = "gui/madscrwl.ttf"
 
 ## The size of normal dialogue text.
-define gui.text_size = 55
+define gui.text_size = 36
 
 ## The size of character names.
-define gui.name_text_size = 60
+define gui.name_text_size = 56
 
 ## The size of text in the game's user interface.
-define gui.interface_text_size = 55
+define gui.interface_text_size = 40
 
 ## The size of labels in the game's user interface.
-define gui.label_text_size = 68
+define gui.label_text_size = 56
 
 ## The size of text on the notify screen.
 define gui.notify_text_size = 36

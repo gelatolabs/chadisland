@@ -33,19 +33,19 @@ define gui.about = _p("""Made with love by Gelato Labs for Ludum Dare 43 {i}("Sa
 
 The Gelato Labs team for LD43 is:
 
-{i}{b}Kyle Farwell (kfarwell){/b} -- Programmer, Writer
+{i}{b}Kyle Farwell (kfarwell){/b} / Programmer, Writer
 
-{b}Matthew Petry (fireTwoOneNine){/b} -- Programmer, UI Artist
+{b}Matthew Petry (fireTwoOneNine){/b} / Programmer, UI Artist
 
-{b}Phil St. Antoine (squid){/b} -- Designer, Writer
+{b}Phil St. Antoine (squid){/b} / Designer, Writer
 
-{b}NickAtlas (RealitySimulator){/b} -- Character/UI Artist
+{b}Nick Atlas (Reality_Simulator){/b} / Character/UI Artist
 
-{b}DICEBLOCK{/b} -- Musician
+{b}DICEBLOCK{/b} / Musician
 
-{b}Sandy Freeland (Pegasauce){/b} -- Resident Chad Expert
+{b}Sandy Freeland (Pegasauce){/b} / Resident Chad Expert
 
-{b}Matthew Rose (mtrose42){/b}{/i} -- Designer, Writer
+{b}Matthew Rose (mtrose42){/b}{/i} / Designer, Writer
 """)
 
 

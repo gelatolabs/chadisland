@@ -15,6 +15,16 @@ define shad = Character("Shad", color="#FFBEBC")
 define sad = Character("Sad", color="#FFCBC1")
 define gad = Character("Ga(y)d(e)", color="#FFFFD1")
 
+image mc normal = "/images/mc/normal.png"
+image brad normal = "/images/brad/normal.png"
+image oc normal = "/images/chieftain/normal.png"
+image oc laugh = "/images/chieftain/laughing.png"
+image oc dead = "/images/chieftain/dead.png"
+image stacy normal = "/images/stacy/normal.png"
+image sungod normal = "/images/sungod/normal.png"
+image thad normal = "/images/thad/normal.png"
+image vlad normal = "/images/vlad/normal.png"
+
 image gelato = "images/gelato.png"
 
 image LDtext:
@@ -37,3 +47,15 @@ image menu_bg:
     alpha 0.5
     "images/menu_tile.png"
     menu_bg_move
+
+transform chide(z=0.80):
+    subpixel True
+    transform_anchor True
+    on hide:
+
+        easein .25 zoom z*0.90 alpha 0.00 yoffset -30
+
+transform breathing(x=640, z=0.80):
+    easein .2 yoffset -10
+    easeout .2 yoffset 0
+    repeat

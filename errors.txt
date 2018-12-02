@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 59: is not terminated with a newline. (Check strings and parenthesis.)
+File "game/script.rpy", line 37: is not terminated with a newline. (Check strings and parenthesis.)
 (Perhaps you left out a " at the end of the first line.)
-        shaman "And 3. Do whatever it takes to keep his holy Chadness happy, even if it means sacrificing somebody into the volcano. 
+        stacy "Oh... hi there [pname]. 
 
 Ren'Py Version: Ren'Py 7.1.3.1092
-Sun Dec 02 10:22:35 2018
+Sun Dec 02 13:23:59 2018
