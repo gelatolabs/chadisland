@@ -21,3 +21,19 @@ image LDtext:
     Text("Made for Ludum Dare 43 \n{i}Sacrifices Must Be Made")
 
 define audio.main = "sound/main.mp3"
+define config.main_menu_music = "sound/main.mp3"
+
+transform menu_bg_move:
+    subpixel True
+    topleft
+    ypos -500
+    parallel:
+        xoffset 0 yoffset 0
+        linear 3.0 xoffset 194 yoffset 485
+        repeat
+
+image menu_bg:
+    topleft
+    alpha 0.5
+    "images/menu_tile.png"
+    menu_bg_move
