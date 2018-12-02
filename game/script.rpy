@@ -1,21 +1,4 @@
-﻿define mc = Character("[pname]", color="#F6A6FF")
-define oc = Character("Chieftain", color="#D5AAFF")
-define shaman = Character("Shaman", color="#ECD4FF")
-define stacy = Character("Stacy", color="#DCD3FF")
-define sg = Character("Chad the Sun God, His Holy Chadness", color="#B5B9FF")
-define brad = Character("Brad", color="#97A2FF")
-define thad = Character("Thad", color="#AFCBFF")
-define glad = Character("Glad", color="#85E3FF")
-define dad = Character("Dad", color="#ACE7FF")
-define vlad = Character("Vlad", color="#6EB5FF")
-define chadski = Character("Comrade Chadski", color="#BFFCC6")
-define plaid = Character("Plaid", color="#DBFFD6")
-define rad = Character("Rad", color="#E7FFAC")
-define shad = Character("Shad", color="#FFBEBC")
-define sad = Character("Sad", color="#FFCBC1")
-define gad = Character("Ga(y)d(e)", color="#FFFFD1")
-
-screen map:
+﻿screen map:
     imagemap:
         ground "map.png"
         hover "map-hover.png"
@@ -23,7 +6,7 @@ screen map:
         hotspot (1266, 526, 300, 455) clicked Jump("volcano")
 
 label start:
-    play music "sound/main.mp3"
+    play music audio.main
 
     python:
         pname = renpy.input("Who are you?", "Anonymous Coward").strip()
@@ -34,7 +17,7 @@ label start:
     mc "Hey Stacy, how's it hanging gurl?"
     show mc katana at left
     show stacy annoyed at right
-    stacy "Oh... hi there [pname]. I was actually just on my way to see the Chieftain, sooo bye."
+    stacy "Oh... hi there [pname]. I was actually just on my way to see the Chief, sooo bye."
     hide stacy
     mc "God dang Chieftain, always cock blocking me! Now that I'm a full-fledged Chad it's time I show him who the real Chad is!"
     hide mc
@@ -69,7 +52,6 @@ label start:
     show mc center normal
     show shaman normal right
     shaman "By the power vested in me by His Holy Chadness, Chad the Sun God, I bestow upon you the title of Master Chad, and pronounce you the new Chieftain of Chad Island!"
-    
     
 
 label map:

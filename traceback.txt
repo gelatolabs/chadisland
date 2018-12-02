@@ -1,11 +1,11 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
+While loading <'Image' u'images/gelato.png'>:
   File "renpy/common/00start.rpy", line 224, in script call
     call _splashscreen from _call_splashscreen_1
   File "game/screens.rpy", line 10, in script
     show gelato at truecenter with Dissolve(0.5, alpha=True)
-IOError: Couldn't find file 'sound/crawdaddy_song.mp3'.
+IOError: Couldn't find file 'images/gelato.png'.
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -22,21 +22,47 @@ Full traceback:
     clear=clear)
   File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/display/core.py", line 2672, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/display/core.py", line 3344, in interact_core
-    renpy.audio.audio.periodic()
-  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/audio/audio.py", line 993, in periodic_thread_main
-    periodic_pass()
-  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/audio/audio.py", line 937, in periodic_pass
-    c.periodic()
-  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/audio/audio.py", line 419, in periodic
-    topf = load(self.file_prefix + filename + self.file_suffix)
-  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/audio/audio.py", line 71, in load
-    rv = renpy.loader.load(fn)
+  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/display/core.py", line 3158, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/display/core.py", line 2075, in draw_screen
+    renpy.config.screen_height,
+  File "render.pyx", line 487, in renpy.display.render.render_screen
+  File "render.pyx", line 235, in renpy.display.render.render
+  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/display/layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 147, in renpy.display.render.render
+  File "render.pyx", line 235, in renpy.display.render.render
+  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/display/transition.py", line 361, in render
+    top = render(self.new_widget, width, height, st, at)
+  File "render.pyx", line 147, in renpy.display.render.render
+  File "render.pyx", line 235, in renpy.display.render.render
+  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/display/layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 147, in renpy.display.render.render
+  File "render.pyx", line 235, in renpy.display.render.render
+  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/display/layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 147, in renpy.display.render.render
+  File "render.pyx", line 235, in renpy.display.render.render
+  File "accelerator.pyx", line 110, in renpy.display.accelerator.transform_render
+  File "render.pyx", line 235, in renpy.display.render.render
+  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/display/image.py", line 500, in render
+    return wrap_render(self.target, width, height, st, at)
+  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/display/image.py", line 306, in wrap_render
+    rend = render(child, w, h, st, at)
+  File "render.pyx", line 147, in renpy.display.render.render
+  File "render.pyx", line 235, in renpy.display.render.render
+  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/display/im.py", line 580, in render
+    return cache.get(self, render=True)
+  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/display/im.py", line 266, in get
+    surf = image.load()
+  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/display/im.py", line 625, in load
+    surf = renpy.display.pgrender.load_image(renpy.loader.load(self.filename), self.filename)
   File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/loader.py", line 576, in load
     raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'sound/crawdaddy_song.mp3'.
+IOError: Couldn't find file 'images/gelato.png'.
 
 Linux-4.19.4-1-default-x86_64-with-glibc2.2.5
 Ren'Py 7.1.3.1092
 chadisland 1.0
-Sun Dec  2 03:47:55 2018
+Sun Dec  2 04:00:15 2018

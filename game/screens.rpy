@@ -5,7 +5,7 @@
 init offset = -1
 
 label splashscreen:
-    $ renpy.music.play(audio.crawdaddy)
+    $ renpy.music.play(audio.main)
     scene black
     show gelato at truecenter with Dissolve(0.5, alpha=True)
     pause 2.0
