@@ -29,7 +29,23 @@ define config.version = "1.0"
 ## Text that is placed on the game's about screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
 
-define gui.about = _p("""
+define gui.about = _p("""Made with love by Gelato Labs for Ludum Dare 43 {i}("Sacrifices Must Be Made"){/i}
+
+The Gelato Labs team for LD43 is:
+
+{i}{b}Kyle Farwell (kfarwell)
+
+Matthew Petry (fireTwoOneNine)
+
+Phil St. Antoine (squid)
+
+NickAtlas
+
+DICEBLOCK
+
+Sandy Freeland
+
+Matthew Rose (mtrose42){/b}{/i}
 """)
 
 
