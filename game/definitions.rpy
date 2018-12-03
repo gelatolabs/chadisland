@@ -39,12 +39,12 @@ image LDtext:
 
 image strikes:
     Text("Strikes Remaining: \n {b}[strikecount]{/b}", style="strike_style")
-    linear 0.5 alpha 0.0
+    alpha 0.0
     linear 0.5 alpha 1.0
 
 style strike_style:
     xpos 0.1
-    ypos 0.9
+    ypos 0.1
     size 45
     outlines [ (2, "#fff", 0, 0)]
 
@@ -91,3 +91,25 @@ transform breathing(x=640, z=0.80):
     easein .2 yoffset -10
     easeout .2 yoffset 0
     repeat
+
+transform kindaLeft:
+    xpos 0.25
+
+transform kindaRight:
+    xpos 0.75
+
+screen map:
+    imagemap:
+        ground "map.jpg"
+        hover "map-hover.jpg"
+
+        hotspot (341, 60, 75, 75) clicked Jump("beachHut")
+        hotspot (1030, 148, 75, 75) clicked Jump("stacyHut")
+        hotspot (1135, 327, 75, 75) clicked Jump("chiefHut")
+        hotspot (1250, 664, 75, 75) clicked Jump("plaidHut")
+        hotspot (1395, 714, 75, 75) clicked Jump("shamanHut")
+        hotspot (558, 42, 83, 82) clicked Jump("communism")
+        hotspot (610, 227, 104, 122) clicked Jump("bar")
+        hotspot (1035, 451, 141, 147) clicked Jump("gym")
+        hotspot (1394, 478, 108, 95) clicked Jump("aaa")
+        hotspot (1260, 122, 263, 179) clicked Jump("chopper")

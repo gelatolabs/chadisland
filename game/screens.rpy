@@ -1524,3 +1524,27 @@ style slider_pref_vbox:
 style slider_pref_slider:
     variant "small"
     xsize 900
+
+screen yesno_prompt:
+    on "show" action With(dissolve)
+    modal True
+
+    if message == layout.ARE_YOU_SURE:
+        add "yesno_are_you_sure.jpg"
+        label _("Are you really sure you wanna do that?")
+        
+    elif message == layout.DELETE_SAVE:
+        add "yesno_delete_save.jpg"
+        label _("Do you really wanna Delete this Save?")
+        
+    elif message == layout.OVERWRITE_SAVE:
+        add "yesno_overwrite_save.jpg"
+        label _("Are you absolutely sure you wanna Overwrite this Save?")
+        
+    elif message == layout.LOADING:
+        add "yesno_loading.jpg"
+        label _("Are you really sure you wanna Continue with this game? ")
+        
+    elif message == layout.QUIT:
+        add "yesno_quit.jpg"
+        label _("Are you sure you're a Chadlet?")
