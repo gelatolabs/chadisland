@@ -20,10 +20,10 @@ screen map:
         hotspot (1260, 122, 263, 179) clicked Jump("chopper")
 
 label triviaWrong:
-    $ strikes = strikes - 1
+    $ strikecount = strikecount - 1
     show strikes
     "Wrong!"
-    if strikes == 0:
+    if strikecount == 0:
         "Get lost, Chadlet!"
         call screen map
     return
@@ -113,9 +113,9 @@ label start:
     mc "Wait a second... That's it! I'll use my new powers as Chieftain and sacrifice him to the volcano. Then Stacy will have to date me!"
     mc "But first I've gotta find some dirt on him..."
     $ victim = "vlad"
-    $ strikes = 3
-    show strikes
+    $ strikecount = 3
     call screen map
+    show strikes
 
 label beachHut:
     scene bg beach
@@ -124,7 +124,7 @@ label beachHut:
         show rad normal at center
         show brad normal at right
 
-        if strikes == 0:
+        if strikecount == 0:
             rad "Get outta here, ya Chadlet!"
             call screen map
 
@@ -266,7 +266,7 @@ label gym:
         dad "I hear it gives you better gains, might try it sometime."
         mc "Oh well, stay swole bros."
     elif victim == "plaid":
-        if strikes == 0:
+        if strikecount == 0:
             dad "Get outta here, ya Chadlet!"
             call screen map
 
@@ -427,9 +427,9 @@ label accuseplaidCanadian:
     mc "Time to go find more dirt."
     hide mc
     $ victim = "plaid"
-    $ strikes = 3
-    show strikes
+    $ strikecount = 3
     call screen map
+    show strikes
 
 label death:
     scene bg shamanHut
