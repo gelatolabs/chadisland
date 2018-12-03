@@ -84,7 +84,7 @@ label start:
     show stacy normal at right with dissolve
     stacy "Uh, hi [pname]. Congrats, I guess..."
     mc "So, Stacy, now that I'm Chieftain, how about you and I get to know each other a little better."
-    mc "If you know what I'm saying ;)"
+    mc "If ya know what I mean..."
     show stacy annoyed at right
     stacy "Uh, thanks, but no. I've already got my eyes on Vlad. He's way more Chad than you'll ever be. BYE!"
     show stacy at chide
@@ -102,50 +102,110 @@ label start:
 
 label beachHut:
     scene bg beach
-    "beach"
+    show mc normal at left
+    show rad normal at center
+    show brad normal at right
+    rad "What is up, Chief, my dude? Come to catch some sick waves?"
+    mc "Thanks for the offer Rad, but I've got work to do. Can you tell me anything about Vlad?"
+    rad "Sure Chief, but you're gonna have to answer some skill testing questions! This is some valuable intel we're talking about here. For true Chad eyes only."
+    mc "I'll have you know I graduated top of my class in trivia school! Try me!"
+    rad "That's the spirit, my guy! What is it called when you surf with your right foot forward?"
+    menu:
+        "Mickey":
+            jump surfTriviaWrong
+        "Donald":
+            jump surfTriviaWrong
+        "Goofy":
+            jump surfTriviaRightA
+        "Sora":
+            jump surfTriviaWrong
+
+label surfTriviaRightA:
+    rad "Right on, dude! OK, one more question. Who was the first person to surf Severn Bore in England?"
+    menu:
+        "Kelly Slater":
+            jump surfTriviaWrong
+        "Jack Churchill":
+            jump surfTriviaRightB
+        "Winston Churchill":
+            jump surfTriviaWrong
+        "Lilo Pelekai":
+            jump surfTriviaWrong
+
+label surfTriviaRightB:
+    rad "Alright dude, you know your stuff! Here's the intel."
+    rad "We keep inviting Vlad to the beach but he bails every time!"
+    brad "Super uncool, broseph!"
+    rad "He'll come with us to the bar or the gym, but never the beach!"
+    brad "Laaame!"
+    rad "Well, hope it helps. Surf's up, dude!"
+    call screen map
+
+label surfTriviaWrong:
+    rad "No! Get lost, Chadlet!"
     call screen map
 
 label stacyHut:
     scene bg stacyHut
-    "stacy's hut"
+    show mc normal at left
+    show stacy normal at center
+    show vlad normal at right
+    stacy "Uh, hey [pname]. Don't you have an island to run? Vlad was just showing me his cape collection. It's on point."
+    mc "Right. I'll let you get back to it then."
     call screen map
 
 label chiefHut:
     scene bg chiefHut
-    "chief's hut"
+    show mc normal at center
+    "Home sweet home."
     call screen map
 
 label plaidHut:
     scene bg plaidHut
-    "plaid's hut"
+    show mc normal at left
+    show plaid normal at right
+    plaid "Well, well, well. If it isn't [pname]. What can I do fer ya, eh?"
     call screen map
 
 label shamanHut:
     scene bg shamanHut
-    "shaman's hut"
+    show mc normal at left
+    show shaman normal at right
+    shaman "Fuck off I'm playing Minesweeper."
     call screen map
 
 label communism:
     scene bg communism
-    "communism"
+    show mc normal at left
+    show chadski normal at right
+    chadski "Comrade! Fighting the good fight?"
     call screen map
 
 label bar:
     scene bg bar
-    "bar"
+    show mc normal at left
+    show gad normal at center
+    show sad normal at right
+    gad "Hey, it's [pname]! Here's to your newfound Chiefliness. Cheers!"
+    sad "Cheers."
     call screen map
 
 label gym:
     scene bg gym
-    "gym"
+    show mc normal at left
+    show glad normal at center
+    show shad normal at right
+    glad "Chief! How glad I am to see you!"
     call screen map
 
 label aaa:
     scene bg aaa
-    "alpha alpha alpha frat"
+    show mc normal at left
+    show thad normal at right
+    thad "Hey, man! Sup?"
     call screen map
 
 label chopper:
     scene bg chopper
-    "chopper"
+    "You don't have enough dirt on Vlad to sacrifice him yet."
     call screen map

@@ -16,14 +16,21 @@ define sad = Character("Sad", color="#FFCBC1")
 define gad = Character("Ga(y)d(e)", color="#FFFFD1")
 
 image mc normal = "/images/mc/normal.png"
+image mc katana = "/images/mc/katana.png"
 image brad normal = "/images/brad/normal.png"
 image oc normal = "/images/chieftain/normal.png"
 image oc laugh = "/images/chieftain/laughing.png"
 image oc dead = "/images/chieftain/dead.png"
 image stacy normal = "/images/stacy/normal.png"
+image stacy annoyed = "/images/stacy/normal.png" # replace me
 image sungod normal = "/images/sungod/normal.png"
-image thad normal = "/images/thad/normal.png"
+image rad normal = "/images/rad/normal.png"
 image vlad normal = "/images/vlad/normal.png"
+image dad normal = "/images/dad/normal.png"
+image gad normal = "/images/gad/normal.png"
+image plaid normal = "/images/plaid/normal.png"
+image shaman normal = "/images/shaman/normal.png"
+image chadski normal = "/images/chadski/normal.png"
 
 image gelato = "images/gelato.png"
 
