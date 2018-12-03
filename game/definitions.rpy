@@ -37,6 +37,17 @@ image gelato = "images/gelato.png"
 image LDtext:
     Text("Made for Ludum Dare 43 \n{i}Sacrifices Must Be Made")
 
+image strikes:
+    Text("Strikes Remaining: \n {b}[strikecount]{/b}", style="strike_style")
+    linear 0.5 alpha 0.0
+    linear 0.5 alpha 1.0
+
+style strike_style:
+    xpos 0.1
+    ypos 0.9
+    size 45
+    outlines [ (2, "#fff", 0, 0)]
+
 define audio.main = "sound/main.mp3"
 define config.main_menu_music = "sound/main.mp3"
 

@@ -76,7 +76,7 @@ define gui.interface_text_size = 40
 define gui.label_text_size = 56
 
 ## The size of text on the notify screen.
-define gui.notify_text_size = 36
+define gui.notify_text_size = 45
 
 ## The size of the game's title.
 define gui.title_text_size = 75
@@ -187,7 +187,7 @@ define gui.confirm_button_text_xalign = 0.5
 define gui.page_button_borders = Borders(15, 6, 15, 6)
 
 define gui.quick_button_borders = Borders(15, 6, 15, 0)
-define gui.quick_button_text_size = 21
+define gui.quick_button_text_size = 32
 define gui.quick_button_text_idle_color = gui.idle_small_color
 define gui.quick_button_text_selected_color = gui.accent_color
 
