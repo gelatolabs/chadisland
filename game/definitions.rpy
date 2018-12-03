@@ -46,14 +46,26 @@ transform menu_bg_move:
     ypos -500
     parallel:
         xoffset 0 yoffset 0
-        linear 3.0 xoffset 194 yoffset 485
-        repeat
+        linear 3.0 xoffset 300 yoffset 600
+        repeat 5
 
 image menu_bg:
     topleft
     alpha 0.5
-    "images/menu_tile.png"
-    menu_bg_move
+    choice:
+     "images/menu_tile.png"
+    choice:
+     "images/menu_tile2.png"
+    choice:
+     "images/menu_tile3.png"
+    subpixel True
+    topleft
+    ypos -500
+    parallel:
+        xoffset 0 yoffset 0
+        linear 3.0 xoffset 300 yoffset 600
+        repeat 5
+    repeat
 
 transform chide(z=0.80):
     subpixel True
