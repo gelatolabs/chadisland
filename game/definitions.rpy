@@ -63,8 +63,10 @@ image menu_bg:
     ypos -500
     parallel:
         xoffset 0 yoffset 0
-        linear 3.0 xoffset 300 yoffset 600
-        repeat 5
+        choice:
+           linear 3.0 xoffset 300 yoffset 600
+        choice:
+           linear 3.0 xoffset -300 yoffset 600
     repeat
 
 transform chide(z=0.80):
