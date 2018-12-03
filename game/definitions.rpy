@@ -13,7 +13,7 @@ define plaid = Character("Plaid", color="#DBFFD6")
 define rad = Character("Rad", color="#E7FFAC")
 define shad = Character("Shad", color="#FFBEBC")
 define sad = Character("Sad", color="#FFCBC1")
-define gad = Character("Ga(y)d(e)", color="#FFFFD1")
+define gad = Character("Ga(y)d", color="#FFFFD1")
 
 image mc normal = "/images/mc/normal.png"
 image mc katana = "/images/mc/katana.png"
