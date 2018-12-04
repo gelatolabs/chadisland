@@ -1,40 +1,24 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 50, in script
-    play sound hearAttackfall
-  File "renpy/common/000statements.rpy", line 268, in execute_play_sound
-    renpy.sound.play(_audio_eval(p["file"]),
-  File "renpy/common/000statements.rpy", line 32, in _audio_eval
-    return eval(expr, locals=store.audio.__dict__)
-  File "game/script.rpy", line 50, in <module>
-    play sound hearAttackfall
-NameError: name 'hearAttackfall' is not defined
+  File "game/script.rpy", line 588, in script
+    if ready:
+SyntaxError: invalid syntax (script.rpy, line 615)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 50, in script
-    play sound hearAttackfall
-  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/ast.py", line 1861, in execute
-    self.call("execute")
-  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/ast.py", line 1849, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/statements.py", line 203, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 268, in execute_play_sound
-    renpy.sound.play(_audio_eval(p["file"]),
-  File "renpy/common/000statements.rpy", line 32, in _audio_eval
-    return eval(expr, locals=store.audio.__dict__)
-  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/python.py", line 1944, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/python.py", line 1937, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 50, in <module>
-    play sound hearAttackfall
-NameError: name 'hearAttackfall' is not defined
+  File "game/script.rpy", line 588, in script
+    if ready:
+  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/ast.py", line 1762, in execute
+    if renpy.python.py_eval(condition):
+  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/python.py", line 1942, in py_eval
+    code = py_compile(code, 'eval')
+  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/python.py", line 674, in py_compile
+    raise e
+SyntaxError: invalid syntax (script.rpy, line 615)
 
 Linux-4.19.4-1-default-x86_64-with-glibc2.2.5
 Ren'Py 7.1.3.1092
 Chad Island 1.0
-Mon Dec  3 20:56:11 2018
+Mon Dec  3 21:50:23 2018

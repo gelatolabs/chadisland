@@ -12,7 +12,7 @@ label start:
 
     python:
         pname = renpy.input("What's your name, bro?", "Chadlet").strip()
-    scene bg chiefHutOutside with fade
+    scene bg chief hut outside with fade
     show mc normal at center with dissolve
     mc "Yo whaddup, it's ya boi [pname]! Just finished my Chad training and ready to slay some serious puss!"
     mc "Hey Stacy, wuss poppin' b?"
@@ -27,7 +27,7 @@ label start:
     show mc at chide
     hide mc
     play music sad
-    scene bg chiefHut with fade
+    scene bg chief hut with fade
     show stacy normal at left with dissolve
     show oc normal at right with dissolve
     stacy "K bye Chief, see you after morning pilates."
@@ -62,6 +62,7 @@ label start:
     show oc at chide
     hide mc
     hide oc
+    play music map
     scene bg beach with fade
     show oc dead at left with dissolve
     show mc normal at center with dissolve
@@ -87,7 +88,7 @@ label start:
     show mc at chide
     hide mc
 
-    scene bg chiefHut with fade
+    scene bg chief hut with fade
     show mc normal at center with dissolve
     mc "I can't believe Stacy would choose Vlad over me!"
     mc "Man, if only Vlad wasn't around. Then Stacy would see that I'm clearly the biggest Chad on this island."
@@ -97,6 +98,7 @@ label start:
     hide mc
     $ victim = "vlad"
     $ strikecount = 3
+    play music happy
     call screen map
 
 label beachHut:
@@ -130,10 +132,10 @@ label beachHut:
         rad "Radical, thanks Chief."
 
     elif victim == "stacy":
-        if radConvinced:
+        if rad == "convinced":
             rad "Let's rail this bitch."
             call screen map
-        elif !radConvinced:
+        elif rad == "unconvinced":
             rad "WHAT'S WRONG WITH YOU! Stacy is a total babe."
             call screen map
         else:
@@ -143,13 +145,13 @@ label beachHut:
                 "Stacy doesn't know how to surf.":
                     rad "No way! That's a disgrace to his holy Chadness!"
                     rad "Let's take this straight to the Sun God."
-                    $ radConvinced = true
+                    $ rad = "convinced"
                 "Stacy doesn't know how to skate.":
                     rad "Meh, who needs to know how to skate when we live on a tropical island?"
-                    $ radConvinced = false
+                    $ rad = "unconvinced"
                 "Stacy doesn't know how to ride a horse.":
                     rad "Yeah, but she can ride something else. Which is good enough for me."
-                    $ radConvinced = false
+                    $ rad = "unconvinced"
     show rad at chide
     show mc at chide
     hide rad
@@ -161,31 +163,31 @@ label surfTriviaA:
     rad "What is it called when you surf with your right foot forward?"
     menu:
         "Mickey":
-            call triviaWrong
+            call triviaWrong from _call_triviaWrong
             jump surfTriviaA
         "Donald":
-             call triviaWrong
+             call triviaWrong from _call_triviaWrong_1
              jump surfTriviaA
         "Goofy":
             rad "Right on, dude! OK, one more question."
             jump surfTriviaB
         "Sora":
-            call triviaWrong
+            call triviaWrong from _call_triviaWrong_2
             jump surfTriviaA
 
 label surfTriviaB:
     rad "Who was the first person to surf Severn Bore in England?"
     menu:
         "Kelly Slater":
-            call triviaWrong
+            call triviaWrong from _call_triviaWrong_3
             jump surfTriviaB
         "Jack Churchill":
             jump surfTriviaWin
         "Winston Churchill":
-            call triviaWrong
+            call triviaWrong from _call_triviaWrong_4
             jump surfTriviaB
         "Lilo Pelekai":
-            call triviaWrong
+            call triviaWrong from _call_triviaWrong_5
             jump surfTriviaB
 
 label surfTriviaWin:
@@ -224,13 +226,13 @@ label stacyHut:
     call screen map
 
 label chiefHut:
-    scene bg chiefHut
+    scene bg chief hut
     show mc normal at center with dissolve
     "Home sweet home, probably a good place to save the game in case I get thrown into a volcano later."
     call screen map
 
 label plaidHut:
-    scene bg plaidHut
+    scene bg plaid hut
     show mc normal at left with dissolve
     if victim == "vlad":
         show plaid normal at right with dissolve
@@ -240,18 +242,14 @@ label plaidHut:
         plaid "Nah, he doesn't seem to like it around here, eh. Says there's too many sharp pointy sticks for his liking, eh."
         plaid "Don't know what that's aboot."
         mc "Strange. Oh well, catch you later."
-        show plad at chide
-        hide plad
     elif victim == "plaid":
         "Plaid must be out, let's come back later."
     else:
         "Smells like roasted Canadian in here."
-    show mc at chide
-    hide mc
     call screen map
 
 label shamanHut:
-    scene bg shamanHut
+    scene bg shaman hut
     show shaman normal at right with dissolve
     show mc normal at left with dissolve
     shaman "Fuck off I'm playing Minesweeper."
@@ -273,10 +271,10 @@ label communism:
         mc "I'll have you know I graduated top of my class in trivia school! Try me!"
         jump communismTriviaA
     elif victim == "stacy":
-        if chadskiConvinced:
+        if chadski == "convinced":
             chadski "DA! I'm with you comrade."
             call screen map
-        elif !chadskiConvinced:
+        elif chadski == "unconvinced":
             chadski "NYET! Stacy is best comrade."
             call screen map
         else:
@@ -285,14 +283,14 @@ label communism:
             menu:
                 "Stacy makes a great beef stroganoff":
                     chadski "Yes, and it's delicous. Back off comrade"
-                    $ chadskiConvinced = false
+                    $ chadski = "unconvinced"
                 "Stacy is a Capitalist spy.":
                     chadski "No way! That's a disgrace to the motherland!"
                     chadski "Let's take this straight to the Sun God."
-                    $ chadskiConvinced = true
+                    $ chadski = "convinced"
                 "Stacy drinks a lot of vodka.":
                     chadski "Finally a drinking buddy with good taste in alcohol."
-                    $ chadskiConvinced = false
+                    $ chadski = "unconvinced"
     else:
         chadski "Comrade! Fighting the good fight?"
         mc "You know it!"
@@ -306,31 +304,31 @@ label communismTriviaA:
     chadski "What is the best type of government?"
     menu:
         "Monarchy":
-            call triviaWrong
+            call triviaWrong from _call_triviaWrong_6
             jump communismTriviaA
         "Republic":
-             call triviaWrong
+             call triviaWrong from _call_triviaWrong_7
              jump communismTriviaA
         "Communism":
             chadski "Da, comrade! OK, one more question."
             jump communismTriviaB
         "Democracy":
-            call triviaWrong
+            call triviaWrong from _call_triviaWrong_8
             jump communismTriviaA
 
 label communismTriviaB:
     chadski "Who is the best ruler to walk this earth?"
     menu:
         "President Trump":
-            call triviaWrong
+            call triviaWrong from _call_triviaWrong_9
             jump communismTriviaB
         "Putin":
             jump communismTriviaWin
         "Queen Elizabeth":
-            call triviaWrong
+            call triviaWrong from _call_triviaWrong_10
             jump communismTriviaB
         "Pope Francis":
-            call triviaWrong
+            call triviaWrong from _call_triviaWrong_11
             jump surfTriviaB
 
 label communismTriviaWin:
@@ -364,11 +362,19 @@ label bar:
         sad "I'm so sad Alexa play Despacito."
         play sound alexaNo
         call screen map
+    elif victim == "brad":
+        gad "Ola Chiefy, how are things with you?"
+        mc "Pretty good. Have you seen Brad recently?"
+        gad "He stopped by here earlier to pre-game before going to Stacy's. Haven't seen him since."
+        sad "He stepped on my hand on his way out..."
+        mc "Oh well, thanks for your help Ga(y)d."
+        gad "Anytime baby!"
+        sad "My hand...."
     elif victim == "stacy":
-        if gadConvinced:
+        if gad == "convinced":
             gad "Yeah baby, I'll follow you anywhere"
             call screen map
-        elif !gadConvinced:
+        elif gad == "unconvinced":
             gad "Puh-lease, Stacy ain't going anywhere. She's my gal pal"
             call screen map
         else:
@@ -377,14 +383,14 @@ label bar:
             menu:
                 "Stacy stole your panties":
                     rad "You mean borrowed, girls always share with eachother."
-                    $ gadConvinced = false
+                    $ gad = "unconvinced"
                 "Stacy is a homophobe.":
                     gad "Oh no she didn't! What a hoe-bag"
                     gad "Let's take this betrayal straight to the Sun God."
-                    $ gadConvinced = true
+                    $ gad = "convinced"
                 "Stacy was spreading some gossip about you":
                     gad "I'll let you in on a secret, she's doing it for me. I'm hoping it'll help me score some nice dick."
-                    $ gadConvinced = false
+                    $ gad = "unconvinced"
     call screen map
 
 label gym:
@@ -416,10 +422,10 @@ label gym:
         mc "I wouldn't mind a quick break from my cheif duties to lift some weights."
         call screen map
     elif victim == "stacy":
-        if shadConvinced:
+        if shad == "convinced":
             shad "I'll be right with you after this last set."
             call screen map
-        elif !shadConvinced:
+        elif shad == "unconvinced":
             shad "Do you even lift bro?"
             call screen map
         else:
@@ -428,14 +434,14 @@ label gym:
             menu:
                 "Stacy has a private gym.":
                     shad "Good for her, more gyms equals more gains."
-                    $ shadConvinced = false
+                    $ shad = "unconvinced"
                 "Stacy is looking too swole.":
                     shad "No such thing you little chadlet."
-                    $ shadConvinced = false
+                    $ shad = "unconvinced"
                 "Stacy takes performance enhancing drugs.":
                     shad "That's too far, here on chad island all muscles are supposed to be natural."
                     shad "Let's take this straight to the Sun God."
-                    $ shadConvinced = true
+                    $ shad = "convinced"
             call screen map
 
 label pokemonTriviaA:
@@ -443,31 +449,31 @@ label pokemonTriviaA:
     dad "Which Pokemon do I resemble most?"
     menu:
         "Gengar":
-            call triviaWrong
+            call triviaWrong from _call_triviaWrong_12
             jump pokemonTriviaA
         "Snorlax":
-            call triviaWrong
+            call triviaWrong from _call_triviaWrong_13
             jump pokemonTriviaA
         "Machamp":
             dad "Way to make it through this set! Just one more, push through the pain!"
             jump pokemonTriviaB
         "Beedrill":
-            call triviaWrong
+            call triviaWrong from _call_triviaWrong_14
             jump pokemonTriviaA
 
 label pokemonTriviaB:
     dad "Which Pokemon can learn the move strength?"
     menu:
         "Ditto":
-            call triviaWrong
+            call triviaWrong from _call_triviaWrong_15
             jump pokemonTriviaB
         "Munchlax":
             jump pokemonTriviaWin
         "Kabuto":
-            call triviaWrong
+            call triviaWrong from _call_triviaWrong_16
             jump pokemonTriviaB
         "Staraptor":
-            call triviaWrong
+            call triviaWrong from _call_triviaWrong_17
             jump pokemonTriviaB
 
 label pokemonTriviaWin:
@@ -482,28 +488,30 @@ label pokemonTriviaWin:
 label aaa:
     scene bg aaa
     show mc normal at left with dissolve
-    show thad normal at center with dissolve
     show glad normal at right with dissolve
     if victim == "vlad":
+        show thad normal at center with dissolve
         glad "Oh wow, the Chieftain! Boy am I glad to see you!"
         thad "Hey, man! Welcome to the Alpha Alpha Alpha Fraternity! Enjoying the toga party?"
         mc "You know it! This place is rockin' as always!"
     elif victim == "plaid":
+        show thad normal at center with dissolve
         glad "Oh wow, the Chieftain! Boy am I glad to see you!"
         thad "Hey, man! Welcome to the Alpha Alpha Alpha Fraternity! Enjoying the toga party?"
         mc "You know it! This place is rockin' as always!"
     elif victim == "brad":
+        show thad normal at center with dissolve
         glad "Woah, last night was a blast!"
-        mc "Aw man, What'd i miss?"
+        mc "Aw man, What'd I miss?"
         thad "Only the most awesome toga party of all time! Just look at my stairs, they're absolutely shredded."
         glad "Yeah! It was so rowdy, someone smashed into the fine china and broke it all."
         mc "Wicked cool. Was Brad at the party last night?"
         thad "Now that you mention it, I saw him with a surfboard for some reason."
     elif victim == "stacy":
-        if gladConvinced:
+        if glad == "convinced":
             glad "You're the best cheif, thanks for looking out for us."
             call screen map
-        elif !gladConvinced:
+        elif glad == "unconvinced":
             glad "This is a happy place, no hurting others"
             call screen map
         else:
@@ -512,21 +520,21 @@ label aaa:
             menu:
                 "Stacy has a nice smile.":
                     glad "I agree, very pretty."
-                    $ gladConvinced = false
+                    $ glad = "unconvinced"
                 "Stacy is the life of the party.":
                     glad "Yeah, she can break it down on the dance floor."
-                    $ gladConvinced = false
+                    $ glad = "unconvinced"
                 "Stacy has a bad attitide.":
                     glad "What! No way! Let's teach her a lesson in happiness."
                     glad "We have to take this straight to the Sun God."
-                    $ gladConvinced = true
+                    $ glad = "convinced"
     call screen map
 
 label chopper:
     scene bg chopper
+    play music sad
     if victim == "vlad":
         "You call Vlad to the top of the volcano to be accused."
-        play sound footsteps
         show shaman normal at left with dissolve
         show rad normal at kindaLeft with dissolve
         show mc normal at center with dissolve
@@ -542,7 +550,8 @@ label chopper:
                 jump vladAccuseVamp
     elif victim == "plaid":
         "You call Plaid to the top of the volcano to be accused."
-        play sound footsteps
+        plaid "How ya doin' [pname], lovely day for a helicopter ride, eh?"
+        plaid "Why'd ya call me up here anyway, eh?"
         show shaman normal at left with dissolve
         show dad normal at kindaLeft with dissolve
         show mc normal at center with dissolve
@@ -561,14 +570,12 @@ label chopper:
                 jump accusePlaidRussian
     elif victim == "brad":
         "You call Brad to the top of the volcano to be accused."
-        play sound footsteps
         show shaman normal at left with dissolve
         show rad normal at kindaLeft with dissolve
         show mc normal at center with dissolve
         show chadski normal at kindaRight with dissolve
         show brad normal at right with dissolve
-        brad "How ya doin' [pname], lovely day for a helicopter ride, eh?"
-        brad "Why'd ya call me up here anyway, eh?"
+        brad "What's up brohemian rhapsody?"
         menu:
             "Accuse Brad of being too high.":
                 jump accuseBradWeed
@@ -577,14 +584,14 @@ label chopper:
             "Accuse Brad of stealing Rad's surf board and riding it down the stairs at the frat.":
                 jump accuseBradSteal
     elif victim == "stacy":
-        $ ready = sum([chadskiConvinced + gadConvinced + gladConvinced + radConvinced + shadConvinced]) >= 2
+        $ ready = sum([chadski == "convinced", gad == "convinced", glad == "convinced", rad == "convinced", shad == "convinced"]) >= 2
         if ready:
             scene bg chopper
             show mc normal at left with dissolve
             mc "Where's the Shaman at?"
             mc "I wanna get on with sacrificing this hoe."
             "Meanwhile..."
-            scene bg shamanHut
+            scene bg shaman hut
             show shaman normal at right with dissolve
             shaman "Oh, Great Chad, The Sun God, I ask thee for guidance."
             sg "What is troubling you my loyal disciple?"
@@ -604,7 +611,8 @@ label chopper:
             sg "[pname]! Your reign of terror is totally uncool, broseph. See ya!"
             "*SMACK*"
             jump death
-        elif !chadskiConvinced && !gadConvinced && !gladConvinced && !radConvinced && !shadConvinced:
+            play sound scream
+        elif chadski != "convinced" && gad != "convinced" && glad != "convinced" && rad != "convinced" && shad != "convinced":
             scene bg chopper
             show mc normal at left with dissolve
             show shaman normal at right with dissolve
@@ -612,6 +620,7 @@ label chopper:
             shaman "You have disgraced the Chad's by spreading lies about Stacy"
             shaman "It is time for your reign to end."
             "*Shaman summons a magical light that pushes [pname] out of the helicopter*"
+            play sound scream
             jump death
         else:
             "You don't have enough support from the local Chad's to get rid of stacy."
@@ -648,7 +657,7 @@ label vladAccuseVamp:
     hide gad
     hide rad
     hide mc
-    scene bg chiefHut with fade
+    scene bg chief hut with fade
     show mc normal at left with dissolve
     show shaman normal at right with dissolve
     shaman "The brodacious babe Stacy is here to see you as requested, Chieftain."
@@ -695,8 +704,8 @@ label accusePlaidCanadian:
     plaid "NOOOO, It's too much!"
     "Plaid runs and falls out of the helicopter"
     hide plaid
-    plaid "AAAAAAAAAAAAAAAAHHH"
     play sound scream
+    plaid "AAAAAAAAAAAAAAAAHHH"
     "You hear a splash as Plaid hits the lava, then no more."
     mc "Alright! Now, to business. Shaman, summon Stacy to my hut!"
     shaman "Yes, Chieftain, as you wish."
@@ -704,7 +713,7 @@ label accusePlaidCanadian:
     hide gad
     hide shaman
     hide mc
-    scene bg chiefHut with fade
+    scene bg chief hut with fade
     show mc normal at left with dissolve
     show shaman normal at right with dissolve
     shaman "The brodacious babe Stacy is here to see you as requested, Chieftain."
@@ -727,6 +736,7 @@ label accusePlaidCanadian:
 label accuseBradWeed:
     shaman "Are you kidding, Brad makes the best doobies on the island! How's that bad?"
     "The shaman teleports behind you and pushes you out of the helicopter."
+    play sound scream
     jump death
 
 label accuseBradBro:
@@ -743,6 +753,7 @@ label accuseBradSteal:
     brad "NOOOO, My brodacious Doobies"
     "Brad jumps out after his pot"
     hide brad
+    play sound scream
     brad "AAAAAAAAAAAAAAAAHHH"
     "You hear a splash as Brad hits the lava, then no more."
     mc "Alright! Now, to business. Shaman, summon Stacy to my hut!"
@@ -751,7 +762,7 @@ label accuseBradSteal:
     hide chadski
     hide shaman
     hide mc
-    scene bg chiefHut with fade
+    scene bg chief hut with fade
     show mc normal at left with dissolve
     show shaman normal at right with dissolve
     shaman "The brodacious babe Stacy is here to see you as requested, Chieftain."
@@ -768,10 +779,16 @@ label accuseBradSteal:
     mc "Time to go convince everyone that she's gotta go."
     hide mc
     $ victim = "stacy"
+    $ chadski = "tbd"
+    $ gad = "tbd"
+    $ glad = "tbd"
+    $ rad = "tbd"
+    $ shad = "tbd"
+    play music map
     call screen map
 
 label death:
     hide mc
     play sound scream
-    "You fall into the mouth of the volcano, regretting the fact you never lost your virginity."
+    "You fall into the mouth of the volcano, regretting the fact you never got with Stacy."
     "You are dead."

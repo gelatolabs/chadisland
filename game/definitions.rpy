@@ -22,7 +22,7 @@ image oc normal = "/images/chieftain/normal.png"
 image oc laugh = "/images/chieftain/laughing.png"
 image oc dead = "/images/chieftain/dead.png"
 image stacy normal = "/images/stacy/normal.png"
-image stacy annoyed = "/images/stacy/normal.png" # replace me
+image stacy annoyed = "/images/stacy/annoyed.png"
 image sungod normal = "/images/sungod/normal.png"
 image rad normal = "/images/rad/normal.png"
 image vlad normal = "/images/vlad/normal.png"
@@ -35,6 +35,7 @@ image sad normal = "/images/sad/normal.png"
 image thad normal = "/images/thad/normal.png"
 image shad normal = "/images/shad/normal.png"
 image glad normal = "/images/glad/normal.png"
+image sg normal = "/images/sg/normal.png"
 
 image gelato = "images/gelato.png"
 
