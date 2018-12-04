@@ -31,6 +31,9 @@ image gad normal = "/images/gad/normal.png"
 image plaid normal = "/images/plaid/normal.png"
 image shaman normal = "/images/shaman/normal.png"
 image chadski normal = "/images/chadski/normal.png"
+image sad normal = "/images/sad/normal.png"
+image thad normal = "/images/thad/normal.png"
+image shad normal = "/images/shad/normal.png"
 
 image gelato = "images/gelato.png"
 
@@ -48,8 +51,20 @@ style strike_style:
     size 45
     outlines [ (2, "#fff", 0, 0)]
 
-define audio.main = "sound/main.mp3"
-define config.main_menu_music = "sound/main.mp3"
+define audio.alexaNo = "sound/sfx/alexaNo.mp3"
+define audio.click = "sound/sfx/click.wav"
+define audio.footsteps = "sound/sfx/footsteps.mp3"
+define audio.heartAttackFall = "sound/sfx/heartAttackFall.mp3"
+define audio.mapUnfurl = "sound/sfx/mapUnfurl.wav"
+define audio.scream = "sound/sfx/scream.mp3"
+
+define audio.happy = "sound/music/happy.mp3"
+define audio.main = "sound/music/main.mp3"
+define audio.map = "sound/music/map.mp3"
+define audio.menu = "sound/music/menu.mp3"
+define audio.sad = "sound/music/sad.mp3"
+define audio.sad2 = "sound/music/sad2.mp3"
+define config.main_menu_music = "sound/music/menu.mp3"
 
 transform menu_bg_move:
     subpixel True

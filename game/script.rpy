@@ -15,13 +15,17 @@ label start:
     mc "Yo whaddup, it's ya boi [pname]! Just finished my Chad training and ready to slay some serious puss!"
     mc "Hey Stacy, wuss poppin' b?"
     show mc normal at left with dissolve
+    play sound footsteps
     show stacy annoyed at right with dissolve
     stacy "Oh... hi there [pname]."
     stacy "I was actually just on my way to see the Chieftain, sooo bye."
+    play sound footsteps
     show stacy at chide
     hide stacy
     mc "God dang Chieftain, always cockblocking me!" 
     mc "Now that I'm a full-fledged Chad it's time I show him who the real Chad is!"
+    play sound footsteps
+    pause 2
     show mc at chide
     hide mc
     scene bg chiefHut with fade
@@ -29,6 +33,7 @@ label start:
     show oc normal at right with dissolve
     stacy "K bye Chief, see you after morning pilates."
     oc "Later Babe."
+    play sound footsteps
     show stacy at chide
     hide stacy
     mc "Yo Chieftain! Where you at!?!"
@@ -42,11 +47,13 @@ label start:
     oc "You actually think you, some brand new baby-Chad, have a chance of beating me? Hahahaha! Do you even lift, bruh?"
     mc "I will defeat you Chieftain, for you see, whilst you were out partying and drinking, {i}I{/i} was studying {b}The Blade{/b}!"
     oc "Oh Sun God, I can't breathe! This is too funny! Bwahahaha! Agh, my chest! I can't stop laughing! Hahahaha! *cough* Ha... Ha... *cough* Ha...  *cough*"
+    play sound heartAttackFall
     show oc normal at right
     "The Chieftain falls over clutching his chest and lays still."
     show oc at chide
     show oc dead at center with dissolve
     mc "Holy crap! I killed the Chieftain! I won!"
+    play sound footsteps
     show brad normal at right with dissolve
     brad "Hey Chief, Rad and I were going to go shred some waves if you wanted to... Oh my Sun God! [pname], you killed the Chieftain, bro!"
     mc "That's right, Brad. Look at me, I'm the Chieftain now!"
@@ -54,6 +61,7 @@ label start:
     show brad at chide
     hide brad
     mc "This is the greatest day of my life!"
+    play sound footsteps
     show mc at chide
     show oc at chide
     hide mc
@@ -62,15 +70,17 @@ label start:
     show oc dead at left
     show mc normal at center
     show shaman normal at right
+    play sound footsteps
     shaman "By the power vested in me by His Holy Chadness, Chad the Sun God, I bestow upon you the title of Master Chad, and pronounce you the new Chieftain of Chad Island!"
     shaman "Your new duties as Chieftain are as follows:" 
-    shaman "1. Protect the island from any bogus bros or babes."
+    shaman "1. Protect the island from any brogus bros or babes."
     shaman "2. Pray to His Holy Chadness, Chad the Sun God." 
     shaman "And 3. Do whatever it takes to keep His Holy Chadness happy, even if it means sacrificing somebody into the volcano." 
     shaman "Good luck new Chieftain, may your reign be long and hard."
     show shaman at chide
     hide shaman
     mc "Alright! And as my first act as a chieftain, I summon the brodacious babe, Stacy."
+    play sound footsteps
     show stacy normal at right with dissolve
     stacy "Uh, hi [pname]. Congrats, I guess..."
     mc "So, Stacy, now that I'm Chieftain, how about you and I get to know each other a little better."
@@ -80,6 +90,7 @@ label start:
     show stacy at chide
     hide stacy
     mc "Aw man, that is totally brogus. Even when I'm the Chieftain she still turns me down."
+    play sound footsteps
     hide mc
 
     scene bg chiefHut with fade
@@ -122,16 +133,28 @@ label beachHut:
         mc "Alrighty, I'll go investigate."
         rad "Radical, thanks Chief."
 
-#    elif victim == "stacy":
-#        if radConvinced:
-#            # ...
-#            call screen map
-#        elif !radConvinced:
-#            # ...
-#            call screen map
-#        else:
-#            menu:
-                
+    elif victim == "stacy":
+        if radConvinced:
+            rad "Let's rail this bitch."
+            call screen map
+        elif !radConvinced:
+            rad "WHAT'S WRONG WITH YOU! Stacy is a total babe."
+            call screen map
+        else:
+            rad "Yo Barney, wha'ts up"
+            mc "hey Rad, I need your help. I just found out something horrible about stacy."
+            menu:
+                "Stacy doesn't know how to surf.":
+                    rad "No way! That's a disgrace to his holy Chadness!"
+                    rad "Let's take this straight to the Sun God."
+                    $ radConvinced = true
+                "Stacy doesn't know how to skate.":
+                    rad "Meh, who needs to know how to skate when we live on a tropical island?"
+                    $ radConvinced = false
+                "Stacy doesn't know how to ride a horse.":
+                    rad "Yeah, but she can ride something else. Which is good enough for me."
+                    $ radConvinced = false
+            call screen map
 
 label surfTriviaA:
     show strikes
@@ -173,6 +196,8 @@ label surfTriviaWin:
     brad "Laaame!"
     rad "Well, hope it helps. Surf's up, dude!"
     brad "See ya later Broba Fett."
+    play sound footsteps
+    pause 2
     call screen map
 
 label stacyHut:
@@ -192,12 +217,16 @@ label stacyHut:
         show thad normal at right
         stacy "Uh, hey [pname]. Don't you have an island to run? Thad was just showing me how to properly make a toga."
     mc "Ugh fine, I'll leave you guys be."
+    play sound footsteps
+    pause 2
     call screen map
 
 label chiefHut:
     scene bg chiefHut
     show mc normal at center
     "Home sweet home, probably a good place to save the game in case I get thrown into a volcano later."
+    play sound footsteps
+    pause 2
     call screen map
 
 label plaidHut:
@@ -215,6 +244,8 @@ label plaidHut:
         "Plaid must be out, let's come back later."
     else:
         "Smells like roasted Canadian in here."
+        play sound footsteps
+        pause 2
     call screen map
 
 label shamanHut:
@@ -222,6 +253,8 @@ label shamanHut:
     show shaman normal at right
     show mc normal at left
     shaman "Fuck off I'm playing Minesweeper."
+    play sound footsteps
+    pause 2
     call screen map
 
 label communism:
@@ -235,12 +268,36 @@ label communism:
         chadski "I can tell you if you can answer my questions."
         mc "I'll have you know I graduated top of my class in trivia school! Try me!"
         jump communismTriviaA
+    elif victim == "stacy":
+        if chadskiConvinced:
+            chadski "DA! I'm with you comrade."
+            call screen map
+        elif !chadskiConvinced:
+            chadski "NYET! Stacy is best comrade."
+            call screen map
+        else:
+            chadski "Hello comrade."
+            mc "Hey Chadski, I need your help. I just found out something horrible about stacy."
+            menu:
+                "Stacy makes a great beef stroganoff":
+                    chadski "Yes, and it's delicous. Back off comrade"
+                    $ chadskiConvinced = false
+                "Stacy is a Capitalist spy.":
+                    chadski "No way! That's a disgrace to the motherland!"
+                    chadski "Let's take this straight to the Sun God."
+                    $ chadskiConvinced = true
+                "Stacy drinks a lot of vodka.":
+                    chadski "Finally a drinking buddy with good taste in alcohol."
+                    $ chadskiConvinced = false
+            call screen map
     else:
         chadski "Comrade! Fighting the good fight?"
         mc "You know it!"
         mc "You watched any good TV recently?"
-        chadski "Nyet, in Soviet Chad Island you don't watch TV, TV watches you."
+        chadski "Nyet, on Soviet Chad Island you don't watch the TV, the TV watches you."
         mc "..."
+        play sound footsteps
+        pause 2
         call screen map
 
 label communismTriviaA:
@@ -279,6 +336,7 @@ label communismTriviaWin:
     chadski "Alright comrade, you know your stuff!."
     chadski "Brad was exiled from the communist islands, because of a string of armed robberies he commited."
     chadski "Go get that сука!"
+    play sound footsteps
     call screen map
 
 label bar:
@@ -304,7 +362,33 @@ label bar:
         mc "Interesting, very interesting. Thanks for the tips guys, enjoy drinking your lives away."
         gad "Will do sweet cheeks~"
         sad "I'm so sad Alexa play Despacito."
-    call screen map
+        play sound alexaNo
+        pause 2
+        call screen map
+    elif victim == "stacy":
+        if gadConvinced:
+            gad "Yeah baby, I'll follow you anywhere"
+            call screen map
+        elif !gadConvinced:
+            gad "Puh-lease, Stacy ain't going anywhere. She's my gal pal"
+            call screen map
+        else:
+            gad "Hey sweetie."
+            mc "Hi Gad, I need your help. I just found out something horrible about stacy."
+            menu:
+                "Stacy stole your panties":
+                    rad "You mean borrowed, girls always share with eachother."
+                    $ gadConvinced = false
+                "Stacy is a homophobe.":
+                    gad "Oh no she didn't! What a hoe-bag"
+                    gad "Let's take this betrayal straight to the Sun God."
+                    $ gadConvinced = true
+                "Stacy was spreading some gossip about you":
+                    gad "I'll let you in on a secret, she's doing it for me. I'm hoping it'll help me score some nice dick."
+                    $ gadConvinced = false
+                    play sound footsteps
+                    pause 2
+            call screen map
 
 label gym:
     scene bg gym
@@ -318,18 +402,48 @@ label gym:
         shad "Nah bro, don't really see him much. He tends to work out at night."
         dad "I hear it gives you better gains, might try it sometime."
         mc "Oh well, stay swole bros."
+        play sound footsteps
+        pause 2
         call screen map
     elif victim == "plaid":
         if strikecount == 0:
             dad "Get outta here, ya Chadlet!"
+            play sound footsteps
+            pause 2
             call screen map
-
+        else:
         shad "What is up, Chief, my dude? Come to get swole?"
         mc "Thanks for the offer Shad, but I've got work to do. Can you tell me anything about Plaid?"
         shad "Sure Chief, but you're gonna have to answer some of Dad's skill testing questions! This is some valuable intel we're talking about here. For true Chad eyes only."
         mc "I'll have you know I graduated top of my class in trivia school! Try me!"
         shad "That's the spirit, my guy! Dad get over here and let's see if this Chadlet is worthy."
         jump pokemonTriviaA
+    elif victim == "brad"
+        shad "Wanna come get a lift in, you could use some beefing up."
+        mc "I wouldn't mind a quick break from my cheif duties to lift some weights."
+        call screen map
+    elif victim == "stacy":
+        if shadConvinced:
+            shad "DA! I'm with you comrade."
+            call screen map
+        elif !shadConvinced:
+            shad "NYET! Stacy is best comrade."
+            call screen map
+        else:
+            shad "Hello comrade."
+            mc "Hey Shad, I need your help. I just found out something horrible about stacy."
+            menu:
+                "Stacy makes a great beef stroganoff":
+                    shad "Yes, and it's delicous. Back off comrade"
+                    $ shadConvinced = false
+                "Stacy drinks a lot of vodka.":
+                    shad "Finally a drinking buddy with good taste in alcohol."
+                    $ shadConvinced = false
+                "Stacy is a Capitalist spy.":
+                    shad "No way! That's a disgrace to the motherland!"
+                    shad "Let's take this straight to the Sun God."
+                    $ shadConvinced = true
+            call screen map
 
 label pokemonTriviaA:
     show strikes
@@ -370,6 +484,8 @@ label pokemonTriviaWin:
     dad "Igloos it together."
     shad "*laughs hysterically*"
     mc "*blank stare*"
+    play sound footsteps
+    pause 2
     call screen map
 
 label aaa:
@@ -394,12 +510,15 @@ label aaa:
         thad "Now that you mention it, I saw him with a surfboard for some reason."
     else:
         glad "I'm rennovating the frat to turn it in to a giant bouncy castle!"
+        play sound footsteps
+        pause 2
     call screen map
 
 label chopper:
     scene bg chopper
     if victim == "vlad":
         "You call Vlad to the top of the volcano to be accused."
+        play sound footsteps
         show shaman normal at left
         show rad normal at kindaLeft
         show mc normal at center
@@ -415,6 +534,7 @@ label chopper:
                 jump vladAccuseVamp
     elif victim == "plaid":
         "You call Plaid to the top of the volcano to be accused."
+        play sound footsteps
         show shaman normal at left
         show dad normal at kindaLeft
         show mc normal at center
@@ -433,6 +553,7 @@ label chopper:
                 jump accuseplaidRussian
     elif victim == "brad":
         "You call Brad to the top of the volcano to be accused."
+        play sound footsteps
         show shaman normal at left
         show rad normal at kindaLeft
         show mc normal at center
@@ -499,17 +620,20 @@ label vladAccuseVamp:
 label plaidaccuseAmerican:
     shaman "Dude, American? Look at his BMI."
     "The shaman whacks you with his staff, sending you flying out of the helicopter."
+    play sound scream
     jump death
 
 label accuseplaidJapanese:
     shaman "What? Being Japanese isn't a reason to kill somebody, you baka gaijin! I have the power of the Sun God and anime on my side!"
     shaman "Omae wa mou shindeiru!"
     "The shaman teleports behind you and pushes you out of the helicopter."
+    play sound scream
     jump death
 
 label accuseplaidRussian:
     plaid "Who do you think I am, eh? Comrade Chadski?"
     "Plaid pushes you out of the helicopter"
+    play sound scream
     jump death
 
 label accuseplaidCanadian:
@@ -520,6 +644,8 @@ label accuseplaidCanadian:
     "Plaid runs and falls out of the helicopter"
     hide plaid
     plaid "AAAAAAAAAAAAAAAAHHH"
+    play sound scream
+    pause 1
     "You hear a splash as Plaid hits the lava, then no more."
     mc "Alright! Now, to business. Shaman, summon Stacy to my hut!"
     shaman "Yes, Chieftain, as you wish."
@@ -555,6 +681,8 @@ label accuseBradWeed:
 label accuseBradBro:
     brad "Who do you think I am bro, I'm brozilla"
     "Brad bangs chest likes a true bro and then headbutts you out of the helicopter"
+    play sound scream
+    pause 1
     jump death
 
 label accusepBradSteal:
@@ -590,6 +718,8 @@ label accusepBradSteal:
     mc "Time to go convince everyone that she's gotta go."
     hide mc
     $ victim = "stacy"
+    play sound footsteps
+    pause 2
     call screen map
 
 label end:
@@ -610,5 +740,6 @@ label end:
     jump death
 
 label death:
+    play sound scream
     "You fall into the mouth of the volcano, regretting the fact you never lost your virginity."
     "You are dead."
