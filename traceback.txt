@@ -1,46 +1,40 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 597, in script
-    mc "Alright! Now, to business. Shaman, summon Stacy to my hut!"
-IOError: Couldn't find file 'sound/sfx/scream.mp3'.
+  File "game/script.rpy", line 50, in script
+    play sound hearAttackfall
+  File "renpy/common/000statements.rpy", line 268, in execute_play_sound
+    renpy.sound.play(_audio_eval(p["file"]),
+  File "renpy/common/000statements.rpy", line 32, in _audio_eval
+    return eval(expr, locals=store.audio.__dict__)
+  File "game/script.rpy", line 50, in <module>
+    play sound hearAttackfall
+NameError: name 'hearAttackfall' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 597, in script
-    mc "Alright! Now, to business. Shaman, summon Stacy to my hut!"
-  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/ast.py", line 678, in execute
-    renpy.exports.say(who, what, interact=self.interact, *args, **kwargs)
-  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/exports.py", line 1229, in say
-    who(what, *args, **kwargs)
-  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/character.py", line 1031, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, **display_args)
-  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/character.py", line 823, in do_display
-    **display_args)
-  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/character.py", line 572, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/ui.py", line 289, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/display/core.py", line 2672, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/display/core.py", line 3096, in interact_core
-    renpy.audio.audio.interact()
-  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/audio/audio.py", line 1062, in interact
-    periodic()
-  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/audio/audio.py", line 993, in periodic_thread_main
-    periodic_pass()
-  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/audio/audio.py", line 937, in periodic_pass
-    c.periodic()
-  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/audio/audio.py", line 419, in periodic
-    topf = load(self.file_prefix + filename + self.file_suffix)
-  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/audio/audio.py", line 71, in load
-    rv = renpy.loader.load(fn)
-  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/loader.py", line 576, in load
-    raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'sound/sfx/scream.mp3'.
+  File "game/script.rpy", line 50, in script
+    play sound hearAttackfall
+  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/ast.py", line 1861, in execute
+    self.call("execute")
+  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/ast.py", line 1849, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/statements.py", line 203, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 268, in execute_play_sound
+    renpy.sound.play(_audio_eval(p["file"]),
+  File "renpy/common/000statements.rpy", line 32, in _audio_eval
+    return eval(expr, locals=store.audio.__dict__)
+  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/python.py", line 1944, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "/home/kyle/Downloads/renpy-7.1.3-sdk/renpy/python.py", line 1937, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 50, in <module>
+    play sound hearAttackfall
+NameError: name 'hearAttackfall' is not defined
 
 Linux-4.19.4-1-default-x86_64-with-glibc2.2.5
 Ren'Py 7.1.3.1092
 Chad Island 1.0
-Mon Dec  3 19:34:46 2018
+Mon Dec  3 20:56:11 2018

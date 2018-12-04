@@ -34,6 +34,7 @@ image chadski normal = "/images/chadski/normal.png"
 image sad normal = "/images/sad/normal.png"
 image thad normal = "/images/thad/normal.png"
 image shad normal = "/images/shad/normal.png"
+image glad normal = "/images/glad/normal.png"
 
 image gelato = "images/gelato.png"
 
@@ -115,16 +116,16 @@ transform kindaRight:
 
 screen map:
     imagemap:
-        ground "map.jpg"
-        hover "map-hover.jpg"
+        ground "map.png"
+        hover "map-hover.png"
 
-        hotspot (341, 60, 75, 75) clicked Jump("beachHut")
-        hotspot (1030, 148, 75, 75) clicked Jump("stacyHut")
-        hotspot (1135, 327, 75, 75) clicked Jump("chiefHut")
-        hotspot (1250, 664, 75, 75) clicked Jump("plaidHut")
-        hotspot (1395, 714, 75, 75) clicked Jump("shamanHut")
-        hotspot (558, 42, 83, 82) clicked Jump("communism")
-        hotspot (610, 227, 104, 122) clicked Jump("bar")
-        hotspot (1035, 451, 141, 147) clicked Jump("gym")
-        hotspot (1394, 478, 108, 95) clicked Jump("aaa")
-        hotspot (1260, 122, 263, 179) clicked Jump("chopper")
+        hotspot (240, 61, 72, 68) clicked Jump("beachHut")
+        hotspot (1058, 149, 72, 68) clicked Jump("stacyHut")
+        hotspot (1181, 331, 72, 68) clicked Jump("chiefHut")
+        hotspot (1320, 672, 72, 68) clicked Jump("plaidHut")
+        hotspot (1492, 724, 72, 68) clicked Jump("shamanHut")
+        hotspot (495, 42, 88, 71) clicked Jump("communism")
+        hotspot (563, 232, 101, 110) clicked Jump("bar")
+        hotspot (1056, 453, 156, 138) clicked Jump("gym")
+        hotspot (1491, 482, 115, 89) clicked Jump("aaa")
+        hotspot (1391, 145, 182, 129) clicked Jump("chopper")
