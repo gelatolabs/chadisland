@@ -412,35 +412,35 @@ label gym:
             pause 2
             call screen map
         else:
-        shad "What is up, Chief, my dude? Come to get swole?"
-        mc "Thanks for the offer Shad, but I've got work to do. Can you tell me anything about Plaid?"
-        shad "Sure Chief, but you're gonna have to answer some of Dad's skill testing questions! This is some valuable intel we're talking about here. For true Chad eyes only."
-        mc "I'll have you know I graduated top of my class in trivia school! Try me!"
-        shad "That's the spirit, my guy! Dad get over here and let's see if this Chadlet is worthy."
-        jump pokemonTriviaA
-    elif victim == "brad"
+            shad "What is up, Chief, my dude? Come to get swole?"
+            mc "Thanks for the offer Shad, but I've got work to do. Can you tell me anything about Plaid?"
+            shad "Sure Chief, but you're gonna have to answer some of Dad's skill testing questions! This is some valuable intel we're talking about here. For true Chad eyes only."
+            mc "I'll have you know I graduated top of my class in trivia school! Try me!"
+            shad "That's the spirit, my guy! Dad get over here and let's see if this Chadlet is worthy."
+            jump pokemonTriviaA
+    elif victim == "brad":
         shad "Wanna come get a lift in, you could use some beefing up."
         mc "I wouldn't mind a quick break from my cheif duties to lift some weights."
         call screen map
     elif victim == "stacy":
         if shadConvinced:
-            shad "DA! I'm with you comrade."
+            shad "I'll be right with you after this last set."
             call screen map
         elif !shadConvinced:
-            shad "NYET! Stacy is best comrade."
+            shad "Do you even lift bro?"
             call screen map
         else:
-            shad "Hello comrade."
+            shad "You here to get swole cheif?"
             mc "Hey Shad, I need your help. I just found out something horrible about stacy."
             menu:
                 "Stacy makes a great beef stroganoff":
                     shad "Yes, and it's delicous. Back off comrade"
                     $ shadConvinced = false
-                "Stacy drinks a lot of vodka.":
+                "Stacy is looking.":
                     shad "Finally a drinking buddy with good taste in alcohol."
                     $ shadConvinced = false
-                "Stacy is a Capitalist spy.":
-                    shad "No way! That's a disgrace to the motherland!"
+                "Stacy takes performance enhancing drugs.":
+                    shad "That's too far, here on chad island all muscles are supposed to be natural."
                     shad "Let's take this straight to the Sun God."
                     $ shadConvinced = true
             call screen map
@@ -572,11 +572,13 @@ label chopper:
 label vladAccusePale:
     shaman "Seriously? You want to kill him because he's pale? That's pretty racist bro, and I will not stand for that in this day and age."
     "The shaman wacks you with his staff, sending you flying out of the helicopter."
+    play sound scream
     jump death
 
 label vladAccuseGhost:
     vlad "Vhat? Vho you callving a ghvost, bvro?"
     "Vlad shoves you with his giant arms, sending you flying out of the helicopter."
+    play sound scream
     jump death
 
 label vladAccuseVamp:
@@ -590,6 +592,7 @@ label vladAccuseVamp:
     "Vlad backs away from Ga(y)d, falling out of the helicopter"
     hide vlad
     vlad "AAAAAAAAAAAAAAAAHHH"
+    play sound scream
     "You hear a splash as Vlad hits the lava, then no more."
     mc "Alright! Now, to business. Shaman, summon Stacy to my hut!"
     shaman "Yes, Chieftain, as you wish."
@@ -645,7 +648,6 @@ label accuseplaidCanadian:
     hide plaid
     plaid "AAAAAAAAAAAAAAAAHHH"
     play sound scream
-    pause 1
     "You hear a splash as Plaid hits the lava, then no more."
     mc "Alright! Now, to business. Shaman, summon Stacy to my hut!"
     shaman "Yes, Chieftain, as you wish."
@@ -682,7 +684,6 @@ label accuseBradBro:
     brad "Who do you think I am bro, I'm brozilla"
     "Brad bangs chest likes a true bro and then headbutts you out of the helicopter"
     play sound scream
-    pause 1
     jump death
 
 label accusepBradSteal:

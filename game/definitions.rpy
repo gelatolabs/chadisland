@@ -56,7 +56,7 @@ define audio.click = "sound/sfx/click.wav"
 define audio.footsteps = "sound/sfx/footsteps.mp3"
 define audio.heartAttackFall = "sound/sfx/heartAttackFall.mp3"
 define audio.mapUnfurl = "sound/sfx/mapUnfurl.wav"
-define audio.scream = "sound/sfx/scream.mp3"
+define audio.scream = "sound/sfx/scream.wav"
 
 define audio.happy = "sound/music/happy.mp3"
 define audio.main = "sound/music/main.mp3"
