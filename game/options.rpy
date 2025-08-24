@@ -53,7 +53,8 @@ The Gelato Labs team for LD43 is:
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "chadisland"
+define build.directory_name = "chadisland"
+define build.executable_name = "game"
 
 
 ## Sounds and music ############################################################
@@ -142,6 +143,10 @@ default preferences.text_cps = 0
 ## to 30 being the valid range.
 
 default preferences.afm_time = 15
+
+
+## Start in fullscreen mode.
+default preferences.fullscreen = True
 
 
 ## Save directory ##############################################################
